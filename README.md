@@ -56,6 +56,10 @@ npm run ios
 
 # OR using Yarn
 yarn ios
+
+# OR if you get some error above
+cd ios
+pod install
 ```
 
 If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
@@ -64,34 +68,22 @@ This is one way to run your app — you can also build it directly from Android 
 
 ## Step 3: Modify your app
 
-Now that you have successfully run the app, let's make changes!
+Now you need add Google Maps Service API to below files in order to run this application
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Go to iOS folder and find AppDelegate file
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+AppDelegate.swift 
+line no 19 (GMSServices.provideAPIKey("ADD GOOGLE API KEY HERE"))
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+Now go to android folder ->app->src->main->AndroidManifest.xml
 
-## Congratulations! :tada:
+line no 18         android:value="ADD GOOGLE MAP KEY HERe"
 
-You've successfully run and modified your React Native App. :partying_face:
+then find .env file and add key to 
+GOOGLE_PLACES_API_KEY= ADD_GOOGLE_API_KEY
 
-### Now what?
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
 
-# Troubleshooting
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-# Learn More
 
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
